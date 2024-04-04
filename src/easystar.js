@@ -7,8 +7,8 @@
 **/
 
 var EasyStar = {}
-import Instance from './instance.js';
-import Node from './node.js';
+import { Instance } from './instance.js';
+import { Node } from './node.js';
 import Heap from 'heap';
 
 const CLOSED_LIST = 0;
