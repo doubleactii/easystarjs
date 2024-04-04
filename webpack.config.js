@@ -46,7 +46,6 @@ module.exports = {
     target: "web",
     mode: 'none',
     entry: './src/easystar.js',
-    devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, "bin"),
         filename: filename,
