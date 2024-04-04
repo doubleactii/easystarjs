@@ -6,17 +6,19 @@
 * @param {Number} costSoFar How far this node is in moves*cost from the start.
 * @param {Number} simpleDistanceToTarget Manhatten distance to the end point.
 **/
-module.exports = function(parent, x, y, costSoFar, simpleDistanceToTarget) {
-    this.parent = parent;
-    this.x = x;
-    this.y = y;
-    this.costSoFar = costSoFar;
-    this.simpleDistanceToTarget = simpleDistanceToTarget;
+export class Node {
+    constructor(parent, x, y, costSoFar, simpleDistanceToTarget) {
+        this.parent = parent;
+        this.x = x;
+        this.y = y;
+        this.costSoFar = costSoFar;
+        this.simpleDistanceToTarget = simpleDistanceToTarget;
+    }
 
     /**
-    * @return {Number} Best guess distance of a cost using this node.
-    **/
-    this.bestGuessDistance = function() {
+     * @return {Number} Best guess distance of a cost using this node.
+     */
+    bestGuessDistance() {
         return this.costSoFar + this.simpleDistanceToTarget;
     }
-};
+}

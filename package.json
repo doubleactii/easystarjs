@@ -5,10 +5,10 @@
     "typings": "./index.d.ts",
     "description": "Asynchronous A* Pathfinding API",
     "scripts": {
-        "build:production": "webpack --production && webpack --production --minify",
+        "build:production": "webpack --mode production && webpack --mode production",
         "test:production": "karma start ./karma.conf.js",
         "benchmark": "karma start ./karma.benchmark.conf.js",
-        "dev": "webpack --development && karma start ./karma.conf.js --development",
+        "dev": "webpack --mode --development && karma start ./karma.conf.js --mode --development",
         "test": "npm run test:production"
     },
     "keywords": [
@@ -29,25 +29,25 @@
         "url": "http://bryce.is"
     },
     "devDependencies": {
-        "@babel/core": "^7.11.6",
-        "@babel/preset-env": "^7.11.5",
+        "@babel/core": "^7.24.4",
+        "@babel/preset-env": "^7.24.4",
         "@jsdevtools/coverage-istanbul-loader": "^3.0.5",
-        "babel-loader": "^8.1.0",
-        "jasmine-core": "^3.6.0",
-        "karma": "^5.2.3",
+        "babel-loader": "^9.1.3",
+        "jasmine-core": "^5.1.2",
+        "karma": "^4.2.0",
         "karma-benchmark": "^1.0.4",
         "karma-benchmarkjs-reporter": "^1.0.0",
-        "karma-chrome-launcher": "^3.1.0",
+        "karma-chrome-launcher": "^3.2.0",
         "karma-coverage-istanbul-reporter": "^3.0.3",
         "karma-jasmine": "^4.0.1",
-        "karma-verbose-reporter": "0.0.6",
-        "karma-webpack": "^4.0.2",
-        "terser-webpack-plugin": "^4.2.3",
-        "uglify-js": "^3.11.1",
-        "webpack": "^4.44.2",
-        "webpack-cli": "^3.3.12"
+        "karma-verbose-reporter": "0.0.8",
+        "karma-webpack": "^5.0.1",
+        "terser-webpack-plugin": "^5.3.10",
+        "uglify-js": "^3.17.4",
+        "webpack": "^5.91.0",
+        "webpack-cli": "^5.1.4"
     },
     "dependencies": {
-        "heap": "0.2.6"
+        "heap": "0.2.7"
     }
 }

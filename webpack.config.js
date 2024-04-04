@@ -4,8 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const config = require('./package.json');
 
-const isProductionBuild = process.argv.indexOf('--production') !== -1;
-const isBuildMinified = process.argv.indexOf('--minify') !== -1;
+const isBuildMinified = true;
 const filename = `easystar-${config.version}${isBuildMinified ? '.min' : ''}.js`
 
 const getLicense = () => {
@@ -45,15 +44,16 @@ if (isBuildMinified) {
 
 module.exports = {
     target: "web",
-    mode: isProductionBuild ? "production" : "development",
+    mode: 'none',
     entry: './src/easystar.js',
-    devtool: isProductionBuild ? false : 'inline-source-map',
+    devtool: 'inline-source-map',
     output: {
         path: path.resolve(__dirname, "bin"),
         filename: filename,
-        libraryTarget: "var",
-        library: "EasyStar",
-        publicPath: "/bin/"
+        publicPath: "/bin/",
+        library: {
+            type: 'module'
+        }
     },
     resolve: {
         extensions: ['.js'],
@@ -62,6 +62,9 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin(terserSettings)],
+    },
+    experiments: {
+        outputModule: true
     },
     module: {
         rules: [

@@ -7,14 +7,12 @@
 **/
 
 var EasyStar = {}
-var Instance = require('./instance');
-var Node = require('./node');
-var Heap = require('heap');
+import Instance from './instance.js';
+import Node from './node.js';
+import Heap from 'heap';
 
 const CLOSED_LIST = 0;
 const OPEN_LIST = 1;
-
-module.exports = EasyStar;
 
 var nextInstanceId = 1;
 
@@ -554,3 +552,5 @@ EasyStar.BOTTOM = 'BOTTOM'
 EasyStar.BOTTOM_LEFT = 'BOTTOM_LEFT'
 EasyStar.LEFT = 'LEFT'
 EasyStar.TOP_LEFT = 'TOP_LEFT'
+
+export { EasyStar };
